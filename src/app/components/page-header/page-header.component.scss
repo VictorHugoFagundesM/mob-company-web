@@ -1,0 +1,55 @@
+@import '../../../assets/variables.scss';
+
+.header-wrapper {
+  padding: 15px;
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  background-color: $primary;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .first-part, .second-part {
+        padding: 3px;
+        font-size: 13px;
+        font-weight: 400;
+        border: 1px solid white;
+        width: 65px;
+        text-align: center;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .first-part {
+        background-color: $primary;
+        color: white;
+        border-radius: 5px 0px 0px 5px;
+      }
+
+      .second-part {
+        background-color: white;
+        color: $primary;
+        border-radius: 0px 5px 5px 0px;
+      }
+    }
+
+    .menu-item {
+      font-weight: 500;
+      padding: 5px;
+      border-bottom: 2px solid white;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+  }
+
+}
