@@ -1,1 +1,54 @@
-<p>form works!</p>
+<div class="page-wrapper">
+
+  <div class="page-header pb-4 pt-1 px-2 border-bottom border-black border-opacity-10">
+
+    <div class="d-flex justify-content-between align-items-center">
+
+      <div class="title">
+        <div class="fs-4 fw-semibold">Linha Telefônica</div>
+        <small class="fw-light">Modifique as informações da linha</small>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="error" *ngIf="error">{{error}}</div>
+
+  <form [formGroup]="form" class="pt-4 px-4 pb-2">
+
+    <div class="row">
+
+      <div class="col-12 col-lg-3">
+        <label for="phone" class="form-label mb-1">Telefone</label>
+        <input type="text" class="form-control" id="phone" name="phone" formControlName="phone" placeholder="Informe o telefone" mask="+00 (00) 0 0000-0000">
+        <app-form-error *ngIf="form.get('phone')" [field]="form.get('phone')"></app-form-error>
+      </div>
+
+      <div class="col-12 col-lg-3">
+        <label for="monthly_price" class="form-label mb-1">Valor mensal</label>
+        <input type="number" class="form-control" id="monthly_price" name="monthly_price" formControlName="monthly_price" placeholder="Informe o valor mensal">
+        <app-form-error *ngIf="form.get('monthly_price')" [field]="form.get('monthly_price')"></app-form-error>
+      </div>
+
+      <div class="col-12 col-lg-3">
+        <label for="setup_price" class="form-label mb-1">Valor de configuração</label>
+        <input type="number" class="form-control" id="setup_price" name="setup_price" formControlName="setup_price" placeholder="Informe o valor de configuração">
+        <app-form-error *ngIf="form.get('setup_price')" [field]="form.get('setup_price')"></app-form-error>
+      </div>
+
+      <div class="col-12 col-lg-3">
+        <label for="currency" class="form-label mb-1">Moeda</label>
+        <input type="text" class="form-control" id="currency" name="currency" formControlName="currency" placeholder="Informe a moeda">
+        <app-form-error *ngIf="form.get('currency')" [field]="form.get('currency')"></app-form-error>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end mt-3 gap-2">
+      <button type="submit" class="btn btn-outline-dark mr-auto" (click)="router.navigate(['phones'])">Voltar</button>
+      <button type="submit" class="btn btn-dark ml-auto" [class.disabled]="form.invalid" [disabled]="form.invalid" (click)="onSubmit()">Salvar</button>
+    </div>
+
+  </form>
+
+</div>

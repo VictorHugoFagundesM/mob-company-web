@@ -1,0 +1,12 @@
+<div class="errors" *ngIf="field?.invalid  && field?.touched">
+  <small *ngIf="field.hasError('required')">O campo é obrigatório</small>
+  <small *ngIf="field.hasError('email')">Formato inválido</small>
+  <small *ngIf="field.errors?.['pattern']?.requiredPattern === '^.*[A-Z].*$'">O campo deve possuir ao menos uma letra maiúscula</small>
+  <small *ngIf="field.errors?.['pattern']?.requiredPattern === '^.*[a-z].*$'">O campo deve possuir ao menos uma letra minúscula</small>
+  <small *ngIf="field.errors?.['pattern']?.requiredPattern === '^.*[0-9].*$'">O campo deve possuir ao menos um número</small>
+  <small *ngIf="field.errors?.['pattern']?.requiredPattern === '^.*[!@#$%^&*(),.?:{}|<>].*$'">O campo deve possuir ao menos um caractere especial</small>
+  <small *ngIf="field.errors?.['minlength']?.requiredLength">O campo deve possuir ao menos {{field.errors?.['minlength']?.requiredLength}} caracteres</small>
+  <small *ngIf="field.errors?.['maxlength']?.requiredLength">O campo deve possuir no máximo {{field.errors?.['maxlength']?.requiredLength}} caracteres</small>
+  <small *ngIf="field.hasError('matchFields')">Os campos devem ser iguais.</small>
+</div>
+

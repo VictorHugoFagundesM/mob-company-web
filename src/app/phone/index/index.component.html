@@ -1,1 +1,88 @@
-<p>index works!</p>
+<div class="page-wrapper">
+
+  <div class="page-header pb-5 pt-1 px-2 border-bottom border-black border-opacity-10">
+
+    <div class="d-flex justify-content-between align-items-center">
+
+      <div class="title">
+        <div class="fs-4 fw-semibold">Linhas telefônicas</div>
+        <small class="fw-light">Acompanhe as linhas telefônicas cadastradas</small>
+      </div>
+
+      <div>
+        <button type="button" class="btn btn-dark" (click)="router.navigate(['phones/form/create'])">Nova linha</button>
+      </div>
+
+    </div>
+
+    <div class="error" *ngIf="error">{{error}}</div>
+    <div class="success" *ngIf="success">{{success}}</div>
+
+    <form [formGroup]="form" class="row mt-3">
+
+      <div class="col-8">
+        <label for="search" class="form-label mb-1">Pesquisar</label>
+        <input type="text" class="form-control" id="search" name="search" formControlName="search" placeholder="Buscar por telefone">
+      </div>
+
+      <div class="col-4">
+        <label for="paginate" class="form-label mb-1">Itens por página</label>
+        <select class="form-select" id="paginate" name="paginate" formControlName="paginate">
+          <option selected>Selectione a quantidade de itens</option>
+          <option
+            *ngFor="let option of paginationOptions"
+            [value]="option"
+          >
+            {{option}}
+          </option>
+        </select>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="page-body pt-4 px-4 pb-2">
+
+    <small class="fw-light">Resultados encontrados: {{phones.length}}</small>
+
+    <div class="table-wrapper">
+      <table class="table-index">
+
+        <tr class="table-header">
+            <th role="button" (click)="orderBy('id')">Id</th>
+            <th role="button" (click)="orderBy('phone')">Telefone</th>
+            <th role="button" (click)="orderBy('monthly_price')">Valor mensal</th>
+            <th role="button" (click)="orderBy('setup_price')">Valor de configuração</th>
+            <th role="button" (click)="orderBy('currency')">Moeda</th>
+            <th role="button" (click)="orderBy('created_at')">Criado Em</th>
+            <th role="button" (click)="orderBy('updated_at')">Alterado Em</th>
+            <th>Ações</th>
+        </tr>
+
+        <tr *ngFor="let phone of phones | paginate: { itemsPerPage: form.get('paginate').value, currentPage: p }">
+            <td>{{phone.id}}</td>
+            <td>{{getMaskedValue(phone.phone, "phone")}}</td>
+            <td>R$ {{phone.monthly_price}}</td>
+            <td>R$ {{phone.setup_price}}</td>
+            <td>{{phone.currency}}</td>
+            <td>{{phone.created_at | date: 'dd/MM/yyyy HH:mm'}}</td>
+            <td>{{phone.updated_at | date: 'dd/MM/yyyy HH:mm'}}</td>
+            <td>
+              <div class="d-flex gap-1 justify-content-center">
+                <div class="btn btn-outline-dark mr-1" title="Editar" (click)="router.navigate(['phones/form/'+phone.id+'/edit'])"><i class="fa fa-pen"></i></div>
+                <div class="btn btn-outline-danger" title="Remover"><i class="fa fa-trash"></i></div>
+              </div>
+            </td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  </div>
+
+
+</div>

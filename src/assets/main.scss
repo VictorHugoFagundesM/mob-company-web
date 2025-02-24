@@ -1,0 +1,44 @@
+body {
+
+  pagination-template {
+
+    nav {
+      display: flex;
+      justify-content: center;
+
+      .ngx-pagination {
+        margin-top: 30px;
+        display: flex;
+
+        .pagination-next, .pagination-previous, .pagination-next a, .pagination-previous a {
+          position: relative;
+          max-width: 30px;
+          overflow: hidden;
+          text-align: center;
+
+          &::after, &::before {
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            background-color: white;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            margin: 0px !important;
+          }
+
+          &:hover {
+            &::after, &::before {
+              background-color: #e6e6e6;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}

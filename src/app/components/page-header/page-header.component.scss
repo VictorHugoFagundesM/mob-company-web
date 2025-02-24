@@ -1,54 +1,61 @@
 @import '../../../assets/variables.scss';
 
 .header-wrapper {
-  padding: 15px;
-  width: 100%;
-  border-bottom: 1px solid $border-color;
+  // padding: 15px;
+  // width: 100%;
+  // border-bottom: 1px solid $border-color;
   background-color: $primary;
 
-  .container {
+  min-height: 70px;
+  height: 70px;
+  max-height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  align-items: center;
+  -webkit-box-shadow: -2px 4px 16px -15px rgba(0, 0, 0, .75);
+  -moz-box-shadow: -2px 4px 16px -15px rgba(0, 0, 0, .75);
+  box-shadow: -2px 4px 16px -15px #000000bf;
+  border-bottom: 1px solid rgba(0, 0, 0, .0705882353);
+
+  .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 80px;
 
-    .logo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      .first-part, .second-part {
-        padding: 3px;
-        font-size: 13px;
-        font-weight: 400;
-        border: 1px solid white;
-        width: 65px;
-        text-align: center;
-        user-select: none;
-        cursor: pointer;
-      }
-
-      .first-part {
-        background-color: $primary;
-        color: white;
-        border-radius: 5px 0px 0px 5px;
-      }
-
-      .second-part {
-        background-color: white;
-        color: $primary;
-        border-radius: 0px 5px 5px 0px;
-      }
-    }
-
-    .menu-item {
-      font-weight: 500;
-      padding: 5px;
-      border-bottom: 2px solid white;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 14px;
+    .first-part, .second-part {
+      padding: 3px;
+      font-size: 13px;
+      font-weight: 400;
+      border: 1px solid white;
+      width: 65px;
+      text-align: center;
+      user-select: none;
       cursor: pointer;
     }
+
+    .first-part {
+      background-color: $primary;
+      color: white;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    .second-part {
+      background-color: white;
+      color: $primary;
+      border-radius: 0px 5px 5px 0px;
+    }
+  }
+
+  .menu-item {
+    font-weight: 500;
+    padding: 10px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    background-color: #e5e9fc5e;
+    cursor: pointer;
+    border-radius: 8px;
 
   }
 

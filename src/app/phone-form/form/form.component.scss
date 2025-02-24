@@ -1,0 +1,16 @@
+.page-wrapper {
+  position: relative;
+
+  .error {
+    position: absolute;
+    padding: 12px;
+    background-color: rgba(211, 55, 55, 0.95);
+    color: white;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    top: 40px;
+  }
+}
+

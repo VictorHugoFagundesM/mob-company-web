@@ -1,0 +1,40 @@
+.table-wrapper {
+  .table-wrapper {
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  .table-index {
+    width: 100%;
+
+      .table-header {
+        border-bottom: 1px solid #00000012;
+
+          th {
+            text-align: center;
+            padding: 12px;
+            font-weight: 500;
+            font-size: 14px;
+          }
+      }
+
+      tr:not(.table-header) {
+        border-top: 1px solid #00000012;
+        text-align: center;
+      }
+
+      td {
+        text-align: center;
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      .table-actions {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+      }
+
+  }
+}

@@ -2,4 +2,19 @@
   min-width: 100vw;
   max-width: 100vw;
   min-height: 100vh;
+  background-color: #e9e9e9;
+
+  .content-wrapper {
+    // margin-top: 70px;
+    // margin-bottom: 70px;
+    // border-radius: 8px;
+    // background-color: white;
+    // padding: 20px;
+
+    padding: 20px;
+    background-color: #fff;
+    margin: 80px 50px 50px;
+    border-radius: 7px;
+    box-shadow: -2px 4px 16px -15px #000000bf;
+  }
 }
