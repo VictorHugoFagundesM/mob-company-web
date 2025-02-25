@@ -13,7 +13,6 @@ import { NgxMaskDirective } from 'ngx-mask';
     RouterOutlet,
     PageHeaderComponent,
     HttpClientModule,
-    NgxMaskDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

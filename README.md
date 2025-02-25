@@ -1,59 +1,32 @@
-# MobCompanyWeb
+## Sistema de gerencimento de telefones
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+### Introdução
 
-## Development server
+Olá!
 
-To start a local development server, run:
+Aqui está o projeto desenvolvido para a fase de testes do processo seletivo. O sistema foi construído utilizando o framework Angular, conforme as instruções fornecidas.
 
-```bash
-ng serve
-```
+Este desafio tem como objetivo a criação de uma interface funcional de cadastro de linhas telefônicas onde os usuários possam listar, criar, editar e removwe esses números.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Requisitos
+- Criar um CRUD completo para a entidade de números de telefone.
+- Implementar duas ou mais páginas no projeto, garantindo uma navegação fluida entre elas.
+- Utilizar Lazy Loading para carregamento otimizado dos módulos.
+- Adotar componentes compartilháveis (Shared Components) sempre que necessário.
+- Aplicar Angular Forms para manipulação e validação dos formulários.
 
-## Code scaffolding
+### Ferramentas utilizadas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 19
+- Node 22
+- Bootstrap 5
+- Font-Awesome 4
 
-```bash
-ng generate component component-name
-```
+## Como começar
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para inciar o sistema é necessário configurar na máquina a versão do node e angular listadas anteriormente. Após isso basta fazer o download do repositório e rodar os seguintes comandos após o download:
 
-```bash
-ng generate --help
-```
+- npm install (instala os pacotes do npm)
+- ng serve (Compila os arquivos e roda por default na porta 4200)
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Obs: Este é a parte Front-End do repositório. Para funcionar é necessário configurar e rodar a API (projeto Back-End) encontrada no repositório: https://github.com/VictorHugoFagundesM/mob-company-api

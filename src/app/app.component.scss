@@ -16,5 +16,9 @@
     margin: 80px 50px 50px;
     border-radius: 7px;
     box-shadow: -2px 4px 16px -15px #000000bf;
+
+    @media(max-width: 998px) {
+      margin: 30px 20px;
+    }
   }
 }
